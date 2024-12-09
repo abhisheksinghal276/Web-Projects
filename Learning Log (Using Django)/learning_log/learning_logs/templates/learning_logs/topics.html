@@ -1,0 +1,14 @@
+{% extends 'learning_logs\base.html' %}
+
+{% block content %}
+
+    <ul class="list-group">
+        {% for topic in topics %}
+        <li class="list-group-item" style="font-size: x-large; font-family:cursive;">
+            <a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>
+        </li>
+        {% empty %}
+        <li class="list-group-item" style="font-size: x-large;">No topics have been added yet.</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
