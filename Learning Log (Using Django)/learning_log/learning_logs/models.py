@@ -1,12 +1,16 @@
 import django.db
 from django.db import models
 
+# Importing required modules for connecting data to users
+from django.contrib.auth.models import User
+
 # Create your models here.
 class Topic(models.Model):
     # Attributes
     """A Topic user is learning about"""
     text = models.CharField(max_length=250)
     date_added = models.DateTimeField(auto_now_add=True)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
 
     # Functions
     def __str__(self):

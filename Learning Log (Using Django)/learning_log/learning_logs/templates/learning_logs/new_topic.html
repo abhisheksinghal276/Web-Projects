@@ -1,0 +1,15 @@
+{% extends "learning_logs/base.html" %}
+
+{% block content %}
+    <div style="margin: 10px;">
+        <h3 style="text-align:left; margin-bottom: 30px; font-family: cursive; font-weight: 500; font-style: italic;">Add a new Topic:</h3>
+
+        <form action="{% url 'learning_logs:new_topic' %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <input class="btn btn-primary btn-info btn-lg" type="submit" value="Submit" style="margin-top: 5px; font-family: cursive;">
+        </form>
+    </div>
+
+{% endblock content %}
