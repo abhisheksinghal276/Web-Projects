@@ -1,7 +1,7 @@
 """Defines URL patterns for the USERS app"""
 
 from django.urls import path, include
-from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.views import LoginView
 
 from . import views
 
